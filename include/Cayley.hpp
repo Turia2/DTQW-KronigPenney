@@ -6,11 +6,11 @@
 using Scalar = std::complex<double>;
 using State = Eigen::VectorX<Scalar>;
 
-class Cayley{
+class Cayley_Graph{
     public:
 
         const int N; 
-        explicit Cayley(int N):N(N){}
+        explicit Cayley_Graph(int N):N(N){}
 
         int indx(int x, int s) const{ 
             return 2*((x % N + N) + s); 
