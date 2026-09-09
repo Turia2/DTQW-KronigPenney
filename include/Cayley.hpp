@@ -13,10 +13,10 @@ class Cayley_Graph{
         explicit Cayley_Graph(int N):N(N){}
 
         int indx(int x, int s) const{ 
-            return 2*((x % N + N) + s); 
+            return 2*((x%N + N)%N) + s; 
         }
 
-        State ini_state(int x0, int spin) const {
+        State initial_state(int x0, int spin) const {
 
             State psi = State::Zero(2*N);
             psi(indx(x0, spin)) = Scalar(1.0, 0.0);
@@ -24,7 +24,7 @@ class Cayley_Graph{
 
         }
 
-        State ini_superp(int x0) const{
+        State initial_superposition(int x0) const{
 
             static const Scalar inv2 = 1.0/std::sqrt(2.0);
             State psi = State::Zero(2*N);
