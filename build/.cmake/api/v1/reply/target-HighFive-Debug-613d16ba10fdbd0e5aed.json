@@ -1,0 +1,76 @@
+{
+	"abstract" : true,
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries"
+		],
+		"files" : 
+		[
+			"vendor/HighFive/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 112,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 115,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 119,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"id" : "HighFive::@3b782731684a1cc01c8a",
+	"interfaceCompileDependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "HighFiveInclude::@3b782731684a1cc01c8a"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "HDF5::HDF5::@6890427a1f51a3e7e1df"
+		}
+	],
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "HighFiveInclude::@3b782731684a1cc01c8a"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "HDF5::HDF5::@6890427a1f51a3e7e1df"
+		}
+	],
+	"name" : "HighFive",
+	"paths" : 
+	{
+		"build" : "vendor/HighFive",
+		"source" : "vendor/HighFive"
+	},
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}

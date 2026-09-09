@@ -17,15 +17,19 @@ find_package(HDF5 REQUIRED COMPONENTS C CXX)
 add_subdirectory(vendor/HighFive)
 
 # Crear el ejecutable final a partir del codigo que escribiremos
-add_executable(dtqw_sim
-    src/main.cpp
-    src/DTQWSolver.cpp
-)
+#add_executable(dtqw_sim
+ #   src/main.cpp
+  #  src/DTQWSolver.cpp
+#)
 
-target_include_directories(dtqw_sim PRIVATE include)
-target_link_libraries(dtqw_sim PRIVATE
-    Eigen3::Eigen
-    ${HDF5_LIBRARIES}
-    HighFive
-)
-target_compile_options(dtqw_sim PRIVATE -O3 -march=native)
+#target_include_directories(dtqw_sim PRIVATE include)
+#target_link_libraries(dtqw_sim PRIVATE
+#    Eigen3::Eigen
+#    ${HDF5_LIBRARIES}
+#    HighFive
+#)
+#target_compile_options(dtqw_sim PRIVATE -O3 -march=native)
+
+add_executable(test_cayley tests/test_cayley.cpp)
+target_include_directories(test_cayley PRIVATE include)
+target_link_libraries(test_cayley PRIVATE Eigen3::Eigen)

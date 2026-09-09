@@ -1,0 +1,158 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Eigen3::Eigen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Eigen3__Eigen-Debug-11193cafddf56f6a81fb.json",
+					"name" : "Eigen3::Eigen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HDF5::HDF5::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HDF5__HDF5-Debug-60b2789563cc1a02e604.json",
+					"name" : "HDF5::HDF5",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "HighFive::@3b782731684a1cc01c8a",
+					"jsonFile" : "target-HighFive-Debug-613d16ba10fdbd0e5aed.json",
+					"name" : "HighFive",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "HighFiveInclude::@3b782731684a1cc01c8a",
+					"jsonFile" : "target-HighFiveInclude-Debug-b6e525e5a0e404a872df.json",
+					"name" : "HighFiveInclude",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hdf5::hdf5::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hdf5__hdf5-Debug-2f1db20a1b977a81d44f.json",
+					"name" : "hdf5::hdf5",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hdf5::hdf5_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hdf5__hdf5_cpp-Debug-3909368d88a1eeab3a39.json",
+					"name" : "hdf5::hdf5_cpp",
+					"projectIndex" : 0
+				}
+			],
+			"directories" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						4,
+						5
+					],
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-9ad1a58d4644cf6543fa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						2,
+						3
+					],
+					"build" : "vendor/HighFive",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-vendor.HighFive-Debug-1094bd0345792135727b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "vendor/HighFive"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"abstractTargetIndexes" : 
+					[
+						0,
+						1,
+						4,
+						5
+					],
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "DTQW_KronigPenney",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"abstractTargetIndexes" : 
+					[
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "HighFive",
+					"parentIndex" : 0
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "test_cayley::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_cayley-Debug-35fc598e50e417296e7e.json",
+					"name" : "test_cayley",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/mateu/DTQW_KronigPenney/build",
+		"source" : "/home/mateu/DTQW_KronigPenney"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"abstract" : true,
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library"
+		],
+		"files" : 
+		[
+			"vendor/HighFive/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 103,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"id" : "HighFiveInclude::@3b782731684a1cc01c8a",
+	"name" : "HighFiveInclude",
+	"paths" : 
+	{
+		"build" : "vendor/HighFive",
+		"source" : "vendor/HighFive"
+	},
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}

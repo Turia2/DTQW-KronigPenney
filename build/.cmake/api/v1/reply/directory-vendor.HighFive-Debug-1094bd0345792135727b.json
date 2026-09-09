@@ -1,0 +1,96 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"vendor/HighFive/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 143,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 148,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 154,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "vendor/HighFive/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/HighFive",
+			"exportName" : "HighFiveTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "HighFive::@3b782731684a1cc01c8a",
+					"index" : 2
+				},
+				{
+					"id" : "HighFiveInclude::@3b782731684a1cc01c8a",
+					"index" : 3
+				}
+			],
+			"paths" : 
+			[
+				"vendor/HighFive/CMakeFiles/Export/3c55b3d90eabeb0113e6f449374cbaad/HighFiveTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/HighFive",
+			"paths" : 
+			[
+				"vendor/HighFive/cmake/HighFiveConfig.cmake",
+				"build/vendor/HighFive/cmake/HighFiveConfigVersion.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "vendor/HighFive",
+		"source" : "vendor/HighFive"
+	}
+}
