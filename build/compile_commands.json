@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/mateu/DTQW_KronigPenney/build",
-  "command": "/usr/bin/g++  -I/home/mateu/DTQW_KronigPenney/include -isystem /usr/include/eigen3 -g -std=gnu++17 -o CMakeFiles/test_cayley.dir/tests/test_cayley.cpp.o -c /home/mateu/DTQW_KronigPenney/tests/test_cayley.cpp",
-  "file": "/home/mateu/DTQW_KronigPenney/tests/test_cayley.cpp",
-  "output": "CMakeFiles/test_cayley.dir/tests/test_cayley.cpp.o"
-}
-]

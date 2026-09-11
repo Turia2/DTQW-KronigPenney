@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/mateu/DTQW_KronigPenney/build/cmake_install.cmake",
-		"/home/mateu/DTQW_KronigPenney/build/vendor/HighFive/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
