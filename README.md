@@ -6,7 +6,7 @@ This project aims to simulate a discrete time quantum walk (DTQW) in a Kronig-Pe
 This project is designed using C++ for the numerical core and it is planned to use python for the analysis and visualization.
 
 ## Status
-This repository is currently in development with only one module, which is the Cayley graph and has already been tested. 
+This repository is currently in development. The Cayley graph module has already been tested. Coin class interface declared in include/Coin.hpp; implementation in src pending. 
 
 
 ## Requirements
