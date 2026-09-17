@@ -5,7 +5,7 @@
 
 using Scalar = std::complex<double>;
 using State = Eigen::VectorX<Scalar>;
-using SpMat = Eigen::SparseMatrix<scalar>;
+using SpMat = Eigen::SparseMatrix<Scalar>;
 
 class Cayley_Graph{
     public:
