@@ -13,8 +13,11 @@ SpMat Coin::build() const{
     triplets.reserve(4*graph.N);
 
     std::vector<double> theta_site(graph.N, theta_);
-    for(const auto& [node, t] :zeeman_) theta_site[node] = t;
-    
+    for(const auto& [node, t] :zeeman_){
+
+        int x = (node%graph.N + graph.N)%graph.N;
+        theta_site[x] = t;
+    }
     for(int x = 0; x < graph.N; x++){
 
         double c = std::cos(theta_site[x]);
