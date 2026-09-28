@@ -16,6 +16,7 @@ find_package(HDF5 REQUIRED COMPONENTS C CXX)
 # Añadir la libreria de datos HighFive
 add_subdirectory(vendor/HighFive)
 
+enable_testing()
 
 add_executable(test_coin tests/test_coin.cpp src/Coin.cpp)
 target_include_directories(test_coin PRIVATE include)
@@ -24,3 +25,8 @@ target_link_libraries(test_coin PRIVATE Eigen3::Eigen)
 add_executable(test_cayley tests/test_cayley.cpp)
 target_include_directories(test_cayley PRIVATE include)
 target_link_libraries(test_cayley PRIVATE Eigen3::Eigen)
+
+foreach(test_target IN ITEMS test_coin test_cayley)
+    target_compile_options(${test_target} PRIVATE -UNDEBUG)
+    add_test(NAME ${test_target} COMMAND ${test_target})
+endforeach()
