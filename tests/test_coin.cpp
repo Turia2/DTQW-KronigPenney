@@ -66,8 +66,8 @@ int main(){
 
     State psi = C_theta*graph.initial_state(4, 0);
     State psi_target = cos(theta)*graph.initial_state(4, 0) + Scalar(0.0, sin(theta))*graph.initial_state(4, 1);
-    check((psi - psi_target).norm(), "accion sobre |4,up>");
-    check(abs(psi.norm() - 1.0), "norma tras aplicar C");
+    check((psi - psi_target).norm(), "action over|4,up>");
+    check(abs(psi.norm() - 1.0), "norm after appliying C");
     
     Coin coin_z(graph, theta, {{1, 0.9}, {-1, 1.3}, {N + 2, 0.2}});
     SpMat C_z = coin_z.build();
@@ -75,19 +75,19 @@ int main(){
     theta_z[1] = 0.9;
     theta_z[N - 1] = 1.3;
     theta_z[2] = 0.2;
-    check((Eigen::MatrixXcd(C_z) - expected_coin(graph, theta_z)).norm(), "zeeman: ||C - C_esperada||");
+    check((Eigen::MatrixXcd(C_z) - expected_coin(graph, theta_z)).norm(), "zeeman: ||C - C_{esperad}||");
     check(unitarity_error(C_z), "zeeman: ||C^dag C - I||");
 
 
     SpMat C_dup = Coin(graph, theta, {{3, 0.1}, {3, 0.5}}).build();
     vector<double> theta_dup(N, theta);
     theta_dup[3] = 0.5;
-    check((Eigen::MatrixXcd(C_dup) - expected_coin(graph, theta_dup)).norm(), "zeeman repetido: gana el ultimo");
+    check((Eigen::MatrixXcd(C_dup) - expected_coin(graph, theta_dup)).norm(), "zeeman repaeted: last one wins");
 
     Cayley_Graph graph1(1);
     SpMat C1 = Coin(graph1, theta).build();
     assert(C1.rows() == 2 && C1.cols() == 2);
-    check((Eigen::MatrixXcd(C1) - expected_coin(graph1, {theta})).norm(), "N = 1: ||C - C_esperada||");
+    check((Eigen::MatrixXcd(C1) - expected_coin(graph1, {theta})).norm(), "N = 1: ||C - C_{expected}||");
 
     cout << "\n All good.\n";
     return 0;
