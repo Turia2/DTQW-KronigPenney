@@ -56,8 +56,8 @@ int main(){
 
     SpMat C_theta = Coin(graph, theta).build();
     vector<double> uniform(N, theta);
-    check((Eigen::MatrixXcd(C_theta)-expected_coin(graph, uniform)).norm(), "generic thetea:");
-    check(unitarity_error(C_theta), "generic theta: ||C - C_{expected}||");
+    check((Eigen::MatrixXcd(C_theta)-expected_coin(graph, uniform)).norm(), "generic theta:");
+    check(unitarity_error(C_theta), "generic theta: ||C - I||");
 
     SpMat C_flip = Coin(graph, M_PI/2).build();
     State flipped = C_flip*graph.initial_state(2,0);
