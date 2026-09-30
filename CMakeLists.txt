@@ -18,15 +18,15 @@ add_subdirectory(vendor/HighFive)
 
 enable_testing()
 
-add_executable(test_coin tests/test_coin.cpp src/Coin.cpp)
-target_include_directories(test_coin PRIVATE include)
-target_link_libraries(test_coin PRIVATE Eigen3::Eigen)
+# Libreria con el nucleo numerico (cada modulo nuevo se añade aqui)
+add_library(dtqw src/Coin.cpp src)
+target_include_directories(dtqw PUBLIC include)
+target_link_libraries(dtqw PUBLIC Eigen3::Eigen)
 
-add_executable(test_cayley tests/test_cayley.cpp)
-target_include_directories(test_cayley PRIVATE include)
-target_link_libraries(test_cayley PRIVATE Eigen3::Eigen)
-
-foreach(test_target IN ITEMS test_coin test_cayley)
+# Tests: cada tests/<nombre>.cpp enlaza contra la libreria
+foreach(test_target IN ITEMS test_cayley test_coin)
+    add_executable(${test_target} tests/${test_target}.cpp)
+    target_link_libraries(${test_target} PRIVATE dtqw)
     target_compile_options(${test_target} PRIVATE -UNDEBUG)
     add_test(NAME ${test_target} COMMAND ${test_target})
 endforeach()
