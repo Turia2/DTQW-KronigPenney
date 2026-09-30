@@ -6,7 +6,7 @@ This project aims to simulate a discrete time quantum walk (DTQW) in a Kronig-Pe
 This project is designed using C++ for the numerical core and it is planned to use python for the analysis and visualization.
 
 ## Status
-This repository is currently in development. The Cayley graph module has already been tested.  The Coin operator module (include/Coin.hpp, src/Coin.cpp) has also been implemented and tested.
+This repository is currently in development. The Cayley graph module has already been tested.  The Coin operator module (include/Coin.hpp, src/Coin.cpp) has also been implemented and tested. The Shift operator module has been implemented, but has not been tested yet.
 
 
 ## Requirements
@@ -22,9 +22,15 @@ git clone --recurse-submodules https://github.com/Turia2/DTQW-KronigPenney
 ```
 
 ## Build
-DTQW-KronigPenney must be compiled using the command 
+DTQW-KronigPenney must be compiled using the command
 ```bash
 cmake -B build && cmake --build build
+```
+
+## Tests
+Run the test suite with
+```bash
+ctest --test-dir build
 ```
 
 ## License
