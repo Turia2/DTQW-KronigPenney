@@ -12,7 +12,7 @@ const double tol = 1e-12;
 
 Eigen::MatrixXcd expected_coin(const Cayley_Graph& graph, const vector <double>& theta_site){
 
-    Eigen_::MatrixXcd E = Eigen::MatrixXcd::Zero(2*graph.N, 2*graph.N);
+    Eigen::MatrixXcd E = Eigen::MatrixXcd::Zero(2*graph.N, 2*graph.N);
     for(int x = 0; x < graph.N; x++){
 
         int u = graph.indx(x, 0);
@@ -44,7 +44,7 @@ int main(){
     const int N = 6;
     Cayley_Graph graph(N);
     const int dim = 2*N;
-    const double tehta = 0.37;
+    const double theta = 0.37;
 
     Coin coin(graph, 0.0);
     SpMat C = coin.build();
@@ -59,9 +59,9 @@ int main(){
     check((Eigen::MatrixXcd(C_theta)-expected_coin(graph, uniform)).norm(), "generic thetea:");
     check(unitarity_error(C_theta), "generic theta: ||C - C_{expected}||");
 
-    SpMate C_flip = Coin(graph, M_PI/2).build();
+    SpMat C_flip = Coin(graph, M_PI/2).build();
     State flipped = C_flip*graph.initial_state(2,0);
-    State target ) Scalar(0.0, 1.0)*graph.initial_state(2,1);
+    State target = Scalar(0.0, 1.0)*graph.initial_state(2,1);
     check((flipped-target).norm(), "theta = pi/2: ||C|2,up>-i|2,down>||");
 
     State psi = C_theta*graph.initial_state(4, 0);
