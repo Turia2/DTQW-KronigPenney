@@ -19,7 +19,7 @@ add_subdirectory(vendor/HighFive)
 enable_testing()
 
 # Libreria con el nucleo numerico (cada modulo nuevo se añade aqui)
-add_library(dtqw src/Coin.cpp src)
+add_library(dtqw src/Coin.cpp src/Shift.cpp)
 target_include_directories(dtqw PUBLIC include)
 target_link_libraries(dtqw PUBLIC Eigen3::Eigen)
 

@@ -20,8 +20,8 @@ SpMat Shift::build() const{
         int xr = (x+1)%graph_.N;
         int xl = (x-1+graph_.N)%graph_.N;
         
-        triplets.push_back({graph_.indx(xr ,0), graph_.idx(x, 0), phase_r});
-        triplets.push_back({graph_.indx(xl, 1), graph_.idx(x, 1), phase_l});
+        triplets.push_back({graph_.indx(xr ,0), graph_.indx(x, 0), phase_r});
+        triplets.push_back({graph_.indx(xl, 1), graph_.indx(x, 1), phase_l});
     }
 
     S.setFromTriplets(triplets.begin(), triplets.end());

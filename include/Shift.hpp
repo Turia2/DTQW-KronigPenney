@@ -4,7 +4,7 @@
 class Shift{
     public:
 
-        explicit Shift(const Cayley_Graph g, double peierls_phi = 0.0);
+        explicit Shift(const Cayley_Graph& g, double peierls_phi = 0.0);
         SpMat build() const;
     
     private:
