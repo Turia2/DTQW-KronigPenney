@@ -24,7 +24,7 @@ target_include_directories(dtqw PUBLIC include)
 target_link_libraries(dtqw PUBLIC Eigen3::Eigen)
 
 # Tests: cada tests/<nombre>.cpp enlaza contra la libreria
-foreach(test_target IN ITEMS test_cayley test_coin)
+foreach(test_target IN ITEMS test_cayley test_coin test_shift)
     add_executable(${test_target} tests/${test_target}.cpp)
     target_link_libraries(${test_target} PRIVATE dtqw)
     target_compile_options(${test_target} PRIVATE -UNDEBUG)
