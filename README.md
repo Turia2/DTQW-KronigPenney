@@ -6,8 +6,7 @@ This project aims to simulate a discrete time quantum walk (DTQW) in a Kronig-Pe
 This project is designed using C++ for the numerical core and it is planned to use python for the analysis and visualization.
 
 ## Status
-This repository is currently in development. The Cayley graph module has already been tested.  The Coin operator module (include/Coin.hpp, src/Coin.cpp) has also been implemented and tested. The Shift operator module has been implemented and tested.
-
+This repository is currently in development. The Cayley graph module has already been tested.  The Coin operator module (include/Coin.hpp, src/Coin.cpp) has also been implemented and tested. The Shift operator module has been implemented and tested. The quantum walk evolution (include/ Walk.hpp and src/Walk.cpp) has been implemented and is pending testing.
 ## Requirements
 - Eigen3 (>=3.4)
 - CMake (>=3.15)
