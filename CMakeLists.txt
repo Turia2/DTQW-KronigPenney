@@ -15,9 +15,9 @@ add_subdirectory(vendor/HighFive)
 
 enable_testing()
 
-add_library(dtqw src/Coin.cpp src/Shift.cpp)
-target_include_directories(dtqw PUBLIC include)
-target_link_libraries(dtqw PUBLIC Eigen3::Eigen)
+add_library(dtqw src/Coin.cpp src/Shift.cpp src/Walk.cpp)
+target_include_directorSies(dtqw PUBLIC include)
+target_link_libraries(dtqw PUBLIC Eigen3::Eigen HighFive)
 
 foreach(test_target IN ITEMS test_cayley test_coin test_shift)
     add_executable(${test_target} tests/${test_target}.cpp)
