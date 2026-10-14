@@ -31,6 +31,7 @@ void Walk::run(int T, int every, const std::string& path){
     file.createAttribute("N", graph_.N);
     file.createAttribute("theta", params_.theta);
     file.createAttribute("phi", params_.phi);
+    file.createAttribute("B", params_.B);
     file.createAttribute("x0", params_.x0);
     file.createAttribute("timesteps", T);
     file.createAttribute("save_every", every);
