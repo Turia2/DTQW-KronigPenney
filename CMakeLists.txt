@@ -19,8 +19,10 @@ add_library(dtqw src/Coin.cpp src/Shift.cpp src/Walk.cpp)
 target_include_directories(dtqw PUBLIC include)
 target_link_libraries(dtqw PUBLIC Eigen3::Eigen HighFive)
 
+add_executable(dtqw_main apps/main.cpp)
+target_link_libraries(dtqw_main PRIVATE dtqw)
 
-foreach(test_target IN ITEMS test_cayley test_coin test_shift)
+foreach(test_target IN ITEMS test_cayley test_coin test_shift test_walk)
     add_executable(${test_target} tests/${test_target}.cpp)
     target_link_libraries(${test_target} PRIVATE dtqw)
     target_compile_options(${test_target} PRIVATE -UNDEBUG)
