@@ -5,6 +5,7 @@ import h5py
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from matplotlib.colors import LogNorm
 matplotlib.use('Agg')  # Use a non-interactive backend for saving figures
 
 H5_PATH = "data/simulation.h5"
@@ -36,7 +37,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 line,  = ax.plot([], [], color = "blue", lw = 1.5)
 title = ax.text(0.02, 0.95, '', transform=ax.transAxes, fontsize=12, verticalalignment='top')
 ax.set_xlim(0, N-1)
-ax.set_ylim(0, np.max(data))
+ax.set_ylim(0, data[1:].max() * 1.1)
 ax.set_xlabel('Position x')
 ax.set_ylabel('Probability P(x, t)')
 
@@ -48,4 +49,14 @@ def update(frame):
 
 animation = FuncAnimation(fig, update, frames=N, interval=100, blit=True)
 animation.save('data/visuals/probability_evolution.gif', writer=PillowWriter(fps=10))
+plt.close(fig)
+
+
+with h5py.File(H5_PATH, "r") as f:
+    norm = f["norm"][:]
+fig, ax = plt.subplots(figsize=(8, 4))
+ax.plot(steps, norm)
+ax.set_xlabel("Time step t")
+ax.set_ylabel("||ψ(t)||")
+fig.savefig(f"{OUT_DIR}/norm.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
