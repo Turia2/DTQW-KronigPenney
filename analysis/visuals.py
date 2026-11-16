@@ -3,12 +3,12 @@ import matplotlib
 from matplotlib.animation import FuncAnimation, PillowWriter
 import h5py
 import numpy as np
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
-from matplotlib.colors import LogNorm
-matplotlib.use('Agg')  # Use a non-interactive backend for saving figures
+import sys
 
-H5_PATH = "data/simulation.h5"
+H5_PATH = sys.argv[1] if len(sys.argv) > 1 else "data/simulation.h5"
 OUT_DIR = "data/visuals"
 os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -29,7 +29,7 @@ ax.set_xlabel('Position x')
 ax.set_ylabel('Probability P(x, T)')
 ax.set_xlim(0, N-1)
 ax.legend()
-fig.savefig('data/visuals/probability_distribution.png', dpi=150)
+fig.savefig(f"{OUT_DIR}/probability_distribution.png", dpi=150)
 plt.close(fig)
 
 
@@ -47,8 +47,8 @@ def update(frame):
     return line, title
 
 
-animation = FuncAnimation(fig, update, frames=N, interval=100, blit=True)
-animation.save('data/visuals/probability_evolution.gif', writer=PillowWriter(fps=10))
+animation = FuncAnimation(fig, update, frames=n_frames, interval=100, blit=True)
+animation.save(f"{OUT_DIR}/probability_evolution.gif", writer=PillowWriter(fps=10))
 plt.close(fig)
 
 
