@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <filesystem>
+#include <cmath>
 
 int main(int argc, char* argv[]){
 
@@ -15,28 +16,59 @@ int main(int argc, char* argv[]){
     double theta = M_PI/4.0;
     double B = M_PI/2.0;
     double phi = 0.0;
-    int x0 = N/2;
+    int x0 = -1;
     int save_every = 10; 
     std::string hdf5 = "data/simulation.h5";
 
     for(int i = 1; i < argc-1; i++){
         std::string a = argv[i];
         if(a == "--N"){
-            N = std::stoi(argv[i]);
+            N = std::stoi(argv[++i]);
 
         } else if(a == "--T") {
-            T = std::stoi(argv[i]);
+            T = std::stoi(argv[++i]);
 
         } else if(a == "--theta"){
-            theta = std::stod(argv[i]);
+            theta = std::stod(argv[++i]);
 
         } else if(a == "--phi"){
-            phi = std::stod(argv[i]);
+            phi = std::stod(argv[++i]);
 
         } else if(a == "--out"){
-            hdf5 = argv[i];
+            hdf5 = argv[++i];
 
+        } else if(a == "--B"){
+            B = std::stod(argv[++i]);
+
+        } else if(a == "--x0"){
+            x0 = std::stoi(argv[++i]);
+        
+        } else if(a == "--save_every"){
+            save_every = std::stoi(argv[++i]);
+
+        } else {
+            throw std::invalid_argument("Unknown argument: " + a);
         }
+    }
+    
+    if(x0 < 0 ){
+        x0 = N/2;
+    }
+
+    if(N <= 0){
+        throw std::invalid_argument("N must be positive");
+    }
+
+    if(T <= 0){
+        throw std::invalid_argument("T must be positive");
+    }
+
+    if(save_every <= 0){
+        throw std::invalid_argument("save_every must be positive");
+    }
+
+    if(x0 >= N){
+        throw std::invalid_argument("x0 must be in [0, N)");
     }
 
     std::filesystem::path out(hdf5);
@@ -53,7 +85,7 @@ int main(int argc, char* argv[]){
     
     State psi0 = graph.initial_superposition(x0);
     WalkParams params{theta, phi, B, x0};
-    Walk walk(graph, U, psi0);
+    Walk walk(graph, U, psi0, params);
     walk.run(T, save_every, hdf5);
     std::cout<<"All good. Data in " << hdf5 << "\n";
 
