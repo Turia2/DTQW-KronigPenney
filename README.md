@@ -3,10 +3,11 @@
 ## Abstract
 This project aims to simulate a discrete time quantum walk (DTQW) in a Kronig-Penney model subjected to magnetic fields using unidimensional cyclical networks (Cayley graphs) and the Zeeman effect. 
 
-This project is designed using C++ for the numerical core and implements python for the visualization. Python for analysis pending.
+This project is designed using C++ for the numerical core and implements python for the visualization. Python for analysis in process.
 
 ## Status
-This repository is currently in development. The Cayley graph module has already been tested.  The Coin operator module (include/Coin.hpp, src/Coin.cpp) has also been implemented and tested. The Shift operator module has been implemented and tested. The quantum walk evolution (include/ Walk.hpp and src/Walk.cpp) has been implemented and is pending testing.
+This repository is currently in development. The Cayley graph module has already been tested.  The Coin operator module (include/Coin.hpp, src/Coin.cpp) has also been implemented and tested. The Shift operator module has been implemented and tested. The quantum walk evolution (include/ Walk.hpp and src/Walk.cpp) has been implemented and is already tested. The lattice structure module has been implemented too, test pending. 
+
 ## Requirements
 - Eigen3 (>=3.4)
 - CMake (>=3.15)
