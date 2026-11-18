@@ -15,7 +15,7 @@ add_subdirectory(vendor/HighFive)
 
 enable_testing()
 
-add_library(dtqw src/Coin.cpp src/Shift.cpp src/Walk.cpp)
+add_library(dtqw src/Coin.cpp src/Shift.cpp src/Walk.cpp src/Lattice.cpp)
 target_include_directories(dtqw PUBLIC include)
 target_link_libraries(dtqw PUBLIC Eigen3::Eigen HighFive)
 
