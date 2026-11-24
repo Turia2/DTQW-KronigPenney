@@ -35,6 +35,9 @@ void Walk::run(int T, int every, const std::string& path){
     file.createAttribute("x0", params_.x0);
     file.createAttribute("timesteps", T);
     file.createAttribute("save_every", every);
+    file.createAttribute("period", params_.period);
+    file.createAttribute("width", params_.width);
+    file.createAttribute("offset", params_.offset);
 
     for(int t =0; t <= T; t++){
         

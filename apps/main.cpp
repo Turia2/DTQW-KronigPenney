@@ -77,14 +77,14 @@ int main(int argc, char* argv[]){
     }
 
     Cayley_Graph graph(N);
-    std::vector<std::pair<int, double>> zeeman = {{N/2, B}};
+    Lattice lattice(graph, L, w, B, offset);
     Coin coin(graph, theta, zeeman);
     Shift shift(graph, phi);
 
     SpMat U = shift.build()*coin.build();
     
     State psi0 = graph.initial_superposition(x0);
-    WalkParams params{theta, phi, B, x0};
+    WalkParams params{theta, phi, B, x0, lattice.period(), lattice.width(), lattice.offset()};
     Walk walk(graph, U, psi0, params);
     walk.run(T, save_every, hdf5);
     std::cout<<"All good. Data in " << hdf5 << "\n";

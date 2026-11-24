@@ -8,6 +8,9 @@ struct WalkParams{
     double phi = 0.0;
     double B = 0.0;
     int x0 = 0;
+    int period = 0;
+    int width = 0;
+    int offset = 0;
 
 };
 
