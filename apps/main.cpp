@@ -8,6 +8,8 @@
 #include <vector>
 #include <filesystem>
 #include <cmath>
+#include "Lattice.hpp"
+
 
 int main(int argc, char* argv[]){
 
@@ -18,6 +20,9 @@ int main(int argc, char* argv[]){
     double phi = 0.0;
     int x0 = -1;
     int save_every = 10; 
+    int L = 10;
+    int w = 2;
+    int offset = 0;
     std::string hdf5 = "data/simulation.h5";
 
     for(int i = 1; i < argc-1; i++){
@@ -45,6 +50,15 @@ int main(int argc, char* argv[]){
         
         } else if(a == "--save_every"){
             save_every = std::stoi(argv[++i]);
+
+        } else if(a == "--L"){
+            L = std::stoi(argv[++i]);
+
+        } else if(a == "--w"){
+            w = std::stoi(argv[++i]);
+
+        } else if(a == "--offset"){
+            offset = std::stoi(argv[++i]);
 
         } else {
             throw std::invalid_argument("Unknown argument: " + a);
@@ -78,7 +92,7 @@ int main(int argc, char* argv[]){
 
     Cayley_Graph graph(N);
     Lattice lattice(graph, L, w, B, offset);
-    Coin coin(graph, theta, zeeman);
+    Coin coin(graph, theta, lattice.zeeman());
     Shift shift(graph, phi);
 
     SpMat U = shift.build()*coin.build();
